@@ -65,8 +65,8 @@ extension-point.
 In the scenario above, *xedit* scans and loads plugins.
 In this way, *xedit* is called **host** in this framework.
 And *xedit-lang-x* is a **plugin**.
-A **host** will require **js-plugins** to manage plugins,
-while a **plugin** doesn't require **js-plugins** but need a special section in `package.json` to describe what the plugin provides.
+A **host** will require **node-plugins** to manage plugins,
+while a **plugin** doesn't require **node-plugins** but need a special section in `package.json` to describe what the plugin provides.
 
 Here's an example what *xedit-lang-x* written in the `package.json`:
 
@@ -158,10 +158,10 @@ Without `callback`, the instance should be returned immediately.
 
 ## Loading plugins
 
-When *xedit* starts, it uses **js-plugins** to scan all installed modules and find out all available extensions from `package.json` files.
+When *xedit* starts, it uses **node-plugins** to scan all installed modules and find out all available extensions from `package.json` files.
 When it is going to load a language plugin, it uses extension-point name `xedit:language` to load all matched extensions.
 
-By default, **js-plugins** scans the following locations in sequence (latter ones may override former ones):
+By default, **node-plugins** scans the following locations in sequence (latter ones may override former ones):
 
 - `node_prefix/lib/node_modules/*/package.json`
 - `$HOME/.node_libraries/*/package.json`
@@ -173,12 +173,12 @@ By default, **js-plugins** scans the following locations in sequence (latter one
 
 ### **host** side
 
-**js-plugins** provides a simple class `Plugins`:
+**node-plugins** provides a simple class `Plugins`:
 
 #### Simplest Usage
 
 ```javascript
-var pluginManager = require('js-plugins').instance;
+var pluginManager = require('node-plugins').instance;
 pluginManager.scan();
 pluginManager.connect(host, extensionPoint, options, function (err, instance) {});
 ```
@@ -186,7 +186,7 @@ pluginManager.connect(host, extensionPoint, options, function (err, instance) {}
 #### More complicated
 
 ```javascript
-var Plugins = require('js-plugins');
+var Plugins = require('node-plugins');
 
 // create own instance instead of using the default one
 var pluginManager = new Plugins();
