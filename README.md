@@ -1,6 +1,7 @@
-[![Build Status](https://travis-ci.org/easeway/js-plugins.png?branch=master)](https://travis-ci.org/easeway/js-plugins)
 
 # Open Plugin Framework for Node.js
+
+This is the extension of js-plugins. It has extension lookup to support `@` scoped NPM packages.
 
 This module is an extension-point based framework for loading plugins, inspired by Eclipse plugin system.
 
@@ -245,3 +246,5 @@ See above example of `xedit-lang-x` about writing a plugin.
 ## License
 
 MIT/X11 License
+
+Thanks js-plugins for the base code.

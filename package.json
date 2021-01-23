@@ -1,16 +1,16 @@
 {
-    "name": "js-plugins",
+    "name": "node-plugins",
     "description": "An extension-point based open plugin framework",
     "version": "1.0.0",
     "author": "Yisui Hu <easeway@gmail.com>",
-    "keywords": ["extension", "plugin", "framework"],
+    "keywords": ["extension", "plugin", "framework", "nodejs"],
     "scripts": {
         "test": "mocha -R spec test/*-test.js",
         "cov-html": "mocha -r blanket -R html-cov test/*-unit-test.js >_coverage.html"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/easeway/js-plugins"
+        "url": "https://github.com/arcm-hub/js-plugins"
     },
     "main": "./index",
     "dependencies": {
@@ -29,7 +29,7 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/easeway/js-plugins/raw/master/LICENSE"
+            "url": "https://github.com/arcm-hub/js-plugins/raw/master/LICENSE"
         }
     ],
     "config": {
